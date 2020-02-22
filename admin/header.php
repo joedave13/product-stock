@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/all.css">
+    <link rel="stylesheet" href="../assets/css/select2.min.css">
     <title>Sistem Informasi Stok - Dashboard</title>
 </head>
 
@@ -37,9 +38,11 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="barang.php"><i class="fas fa-fw fa-box"></i> Data
                             Barang</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-fw fa-arrow-alt-circle-down"></i> Data
+                        <a class="dropdown-item" href="pemasukan.php"><i class="fas fa-fw fa-arrow-alt-circle-down"></i>
+                            Data
                             Pemasukan</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-fw fa-arrow-alt-circle-up"></i> Data
+                        <a class="dropdown-item" href="pengeluaran.php"><i class="fas fa-fw fa-arrow-alt-circle-up"></i>
+                            Data
                             Pengeluaran</a>
                     </div>
                 </li>
