@@ -64,8 +64,11 @@
                         <td><?= $d['kode_pemasukan']; ?></td>
                         <td><?= date('d M Y', strtotime($d['tanggal'])); ?></td>
                         <td>
-                            <a href="pemasukan_edit.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-secondary">
+                            <a href="pemasukan_detail.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-secondary">
                                 <i class="fas fa-fw fa-info"></i> Detail
+                            </a>
+                            <a href="pemasukan_edit.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-info">
+                                <i class="fas fa-fw fa-pencil-alt"></i> Edit
                             </a>
                             <a href="pemasukan_delete.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-danger">
                                 <i class="fas fa-fw fa-trash"></i> Hapus
