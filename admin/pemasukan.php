@@ -27,6 +27,13 @@
             <a href="pemasukan_tambah.php" class="btn btn-primary btn-sm float-left">
                 <i class="fas fa-fw fa-plus"></i> Tambah Data
             </a>
+            <form action="pemasukan.php" method="get" class="form-inline float-right">
+                <input type="text" class="form-control form-control-sm mr-2" name="keyword" id="keyword"
+                    placeholder="Cari Kode Transaksi">
+                <button type="submit" class="btn btn-success btn-sm">
+                    <i class="fas fa-fw fa-search"></i> Cari
+                </button>
+            </form>
 
             <br><br>
 
@@ -42,7 +49,13 @@
                 <tbody>
                     <?php
                     include '../koneksi.php';
-                    $data = mysqli_query($koneksi, "SELECT * FROM pemasukan");
+                    if (isset($_GET['keyword'])) {
+                        $keyword = $_GET['keyword'];
+                        $data = mysqli_query($koneksi, "SELECT * FROM pemasukan WHERE kode_pemasukan LIKE '%" . $keyword . "%'");
+                    }
+                    else {
+                        $data = mysqli_query($koneksi, "SELECT * FROM pemasukan");
+                    }
                     $no = 1;
                     while ($d = mysqli_fetch_array($data)) {
                     ?>
