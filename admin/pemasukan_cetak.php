@@ -1,22 +1,39 @@
-<?php include 'header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container mt-3">
-    <div class="card">
-        <div class="card-header">
-            <h4>Detail Transaksi Pemasukan</h4>
-        </div>
-        <?php 
-            include '../koneksi.php';
-            $id = $_GET['id'];
-            $dokumen = mysqli_query($koneksi, "SELECT * FROM pemasukan WHERE id = '$id'");
-            while($d = mysqli_fetch_array($dokumen)){
-        ?>
-        <div class="card-body">
-            <a href="pemasukan_cetak.php?id=<?= $d['id']; ?>" class="btn btn-sm btn-info float-left" target="_blank">
-                <i class="fas fa-fw fa-print"></i> Cetak Dokumen
-            </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/all.css">
+    <title>Sistem Informasi Stok - Dokumen</title>
+</head>
 
-            <br><br>
+<body>
+    <?php 
+        session_start();
+        if ($_SESSION['status'] != 'logged_in') {
+            header('location: ../index.php?pesan=belum_login');
+        }
+    ?>
+
+    <div class="container mt-5">
+        <div class="col-md-10">
+            <h2>PT. Matahari Surya Mitra Pangan</h2>
+            <h4>Jalan Industri Mangliawan 88 A</h4>
+            <h5>Kabupaten Malang</h5>
+
+            <p>No. SK : AHU-0011264.AH.01.01.TAHUN 2017</p>
+            <p><b>Dokumen Transaksi Pemasukan</b></p>
+
+            <br>
+
+            <?php
+                include '../koneksi.php';
+                $id = $_GET['id'];
+                $dokumen = mysqli_query($koneksi, "SELECT * FROM pemasukan WHERE id = '$id'");
+                while($d = mysqli_fetch_array($dokumen)){
+            ?>
 
             <table class="table">
                 <tr>
@@ -29,12 +46,15 @@
                     <th>:</th>
                     <td><?= date('d M Y', strtotime($d['tanggal'])); ?></td>
                 </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <td></td>
+                </tr>
             </table>
 
-            <br>
-
             <h5 class="text-center">Daftar Barang</h5>
-            <table class="table table-bordered table-striped">
+            <table class="table table-striped table-bordered">
                 <tr>
                     <th width="20%">Kode Barang</th>
                     <th width="50%">Nama Barang</th>
@@ -58,17 +78,17 @@
                 </tr>
 
                 <?php } ?>
-
             </table>
 
             <?php } ?>
-
-            <a href="pemasukan.php" class="btn btn-sm btn-danger float-left">
-                <i class="fas fa-fw fa-arrow-left"></i> Kembali
-            </a>
-
         </div>
     </div>
-</div>
 
-<?php include 'footer.php'; ?>
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.print();
+    </script>
+</body>
+
+</html>

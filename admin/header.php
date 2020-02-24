@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/all.css">
     <link rel="stylesheet" href="../assets/css/select2.min.css">
-    <title>Sistem Informasi Stok - Dashboard</title>
+    <title>Sistem Informasi Stok</title>
 </head>
 
 <body style="background: #F0F0F0">
