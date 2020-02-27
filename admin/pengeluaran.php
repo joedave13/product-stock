@@ -21,13 +21,20 @@
                         <span aria-hidden="true">&times;</span>
                         </button></div>';
                 }
+                else if ($_GET['pesan'] == 'edit') {
+                    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Data berhasil diubah!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button></div>';
+                }
             }
             ?>
 
             <a href="pengeluaran_tambah.php" class="btn btn-primary btn-sm float-left">
                 <i class="fas fa-fw fa-plus"></i> Tambah Data
             </a>
-            <form action="penegeluaran.php" method="get" class="form-inline float-right">
+            <form action="pengeluaran.php" method="get" class="form-inline float-right">
                 <input type="text" name="keyword" id="keyword" class="form-control form-control-sm mr-2"
                     placeholder="Cari Kode Transaksi">
                 <button type="submit" class="btn btn-success btn-sm">
