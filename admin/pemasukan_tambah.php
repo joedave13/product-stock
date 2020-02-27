@@ -42,7 +42,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <select name="barang[]" class="form-control select-barang">
+                                <select name="barang[]" class="form-control select-barang" required>
                                     <?php 
                                         $dataBarang = mysqli_query($koneksi, "SELECT * FROM barang");
                                         while($db = mysqli_fetch_array($dataBarang)){
